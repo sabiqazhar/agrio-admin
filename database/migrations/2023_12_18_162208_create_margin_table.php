@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('margin', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transaction_id');
-            $table->integer('total_margin');
-            $table->integer('percentage_margin');
+            $table->unsignedBigInteger('transaction_id')->nullable();
+            $table->integer('total_margin')->nullable();
+            $table->integer('percentage_margin')->nullable();
             $table->timestamps();
 
             $table->foreign('transaction_id')

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('users_id');
-            $table->unsignedBigInteger('product_id');
-            $table->string('customer_name');
-            $table->integer('type_costomer');
-            $table->bigInteger('total_price');
-            $table->integer('quantity');
+            $table->unsignedBigInteger('users_id')->nullable();
+            $table->unsignedBigInteger('product_id')->nullable();
+            $table->string('customer_name')->nullable();
+            $table->integer('type_costomer')->nullable();
+            $table->bigInteger('total_price')->nullable();
+            $table->integer('quantity')->nullable();
             $table->timestamps();
 
             $table->foreign('users_id')
