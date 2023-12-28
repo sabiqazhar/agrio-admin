@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('margin', function (Blueprint $table) {
-            $table->double('total_margin')->nullable();
-            $table->double('percentage_margin')->nullable();
+            $table->double('total_margin')->nullable()->change();
+            $table->double('percentage_margin')->nullable()->change();
         });
     }
 
@@ -22,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('margin');
+        Schema::table('margin', function (Blueprint $table) {
+            $table->integer('total_margin')->nullable();
+            $table->integer('percentage_margin')->nullable();
+        });
     }
 };
