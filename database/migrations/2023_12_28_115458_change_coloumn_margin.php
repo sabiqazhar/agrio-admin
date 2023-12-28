@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('margin', function (Blueprint $table) {
+        Schema::modify('margin', function (Blueprint $table) {
             $table->double('total_margin')->nullable();
             $table->double('percentage_margin')->nullable();
         });
